@@ -1,0 +1,2 @@
+#[zzz]
+#node ansible_user=rahul-Latitude-3490 ansible_host=localhost ansible_ssh_private_key_file=/home/rahul/.ssh/id_rsa.pub
