@@ -1,0 +1,28 @@
+ASSIGNMENT 1 - ANSIBLE 
+ansible web -m group -a "name=NinjaTeam state=present" -b 
+ansible web -m file -a "path=/home/Nitish mode=g=rx" -b
+ansible web -m user -a "name=Nitish groups=NinjaTeam append=yes"
+ansible web -m file -b "path=/home/nitish mode=u=rwx,g=rx,o=rx" -b
+
+ansible web -m user a "name=Nitish shell=/bin/sh" -b 
+ansible web -m user a "name=Nitish password='{{ '123' | password_hash('sha512') }}'" -b
+
+Create shared directories
+ansible web -m file -a "path=/home/Nitish/Team state=directory mode=u=rwx,g=rwx owner=Nitish group=NinjaTeam" -b
+ansible web -m file -a "path=/home/Nitish/Ninja state=directory mode=u=rwx,g=rwx owner=Nitish group=NinjaTeam" -b
+
+Additional features
+ansible web -m user -a "name=Nitish shell=/bin/bash" -b
+
+Delete user 
+ansible web -m user -a "name=Nitish state=absent remove=yes" -b
+
+Delete group 
+ansible web -m group -a "name=NinjaTeam state=absent remove=yes" -b
+
+List users 
+ansible web -m command -a "getent passwd" -b
+
+List users 
+ansible web -m command -a "getent passwd" -b
+Footer
